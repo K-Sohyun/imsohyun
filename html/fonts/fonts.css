@@ -1,0 +1,30 @@
+/*지마켓 산스*/
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('./GmarketSansLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('./GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('./GmarketSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/*Poetsen One*/
+@font-face {
+    font-family: 'PoetsenOne';
+    src: url('./PoetsenOne-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
