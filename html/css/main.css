@@ -1,0 +1,9 @@
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; padding: 0; margin: 0; }
+body { position: relative; font-family: 'GmarketSans', sans-serif; font-size: 13px; line-height: 1.2; min-width:280px; overflow-x:hidden; }
+ol, ul, dl { margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; color:#000; }
+
+.clear::after { content:""; clear:both; display:block; }
+.skip_tag { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: polygon(0 0, 0 0, 0 0); }
+.font_po { font-family: 'PoetsenOne', sans-serif; }
