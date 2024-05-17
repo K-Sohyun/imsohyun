@@ -28,3 +28,12 @@
     font-weight: 400;
     font-style: normal;
 }
+
+
+/*Kranky*/
+@font-face {
+    font-family: 'Kranky';
+    src: url('./Kranky-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}

@@ -1,9 +1,135 @@
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; padding: 0; margin: 0; }
-body { position: relative; font-family: 'GmarketSans', sans-serif; font-size: 13px; line-height: 1.2; min-width:280px; overflow-x:hidden; }
+html { scroll-behavior: smooth; }
+body { position: relative; font-family: 'GmarketSans', sans-serif; font-size: 14px; line-height: 1.2; min-width:280px; overflow-x:hidden; }
 ol, ul, dl { margin: 0; padding: 0; }
 li { list-style: none; }
 a { text-decoration: none; color:#000; }
 
 .clear::after { content:""; clear:both; display:block; }
 .skip_tag { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: polygon(0 0, 0 0, 0 0); }
-.font_po { font-family: 'PoetsenOne', sans-serif; }
+.font_pso { font-family: 'PoetsenOne', sans-serif; }
+.font_kky { font-family: "Kranky", sans-serif; }
+.container { max-width: 1230px; padding:0 15px; margin:0 auto; }
+
+
+/* Header */
+#hd { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; align-items: center; height: 80px; padding: 0 40px; }
+#hd.on { background:rgba(255,255,255,0.95); box-shadow: 0px 0px 10px rgba(0,0,0,0.15); }
+#hd h1 { margin-right: auto; }
+#hd nav ul { display: flex; gap: 0 20px; }
+#hd nav ul li a { font-size: 16px; position: relative; }
+#hd nav ul li a::after { content:""; position:absolute; bottom:-2px; left: 0; width: 0px; height: 2px; background:#000; opacity: 0; transition:all 0.3s; }
+#hd nav ul li a:hover::after { width: 100%; opacity: 1; }
+
+
+/* Main : Home */
+#home { position:relative; height: 100vh; overflow: hidden; }
+#home .textsvg, #home svg { width: 100%; height: 100vh; }
+#home .stroke {
+    stroke: #000; stroke-width: 1px; stroke-dasharray: 0 250; stroke-opacity: 1; fill: none;
+    animation: stroke_ani 8s infinite; animation-timing-function: cubic-bezier(.25, .46, .45, .94);
+}
+#home .fill { fill: #000; fill-opacity: 0; animation: fill_ani 8s infinite; animation-timing-function: cubic-bezier(.25, .46, .45, .94); }
+#home #draw-text { font-family: 'Kranky', sans-serif; font-size: 64px; }
+
+#home .click { position:absolute; bottom: 15px; left: 50%; transform:translateX(-50%); font-size: 14px; color:#000; }
+#home .click span { position:relative; display:block; width:26px; height: 38px; border: 2px solid #000; border-radius: 20px; margin: 0 auto 5px; }
+#home .click span::after { content:""; position:absolute; width:5px; height:5px;border-radius: 50%; background:#000; top:5px; left:8px; animation: click_ani 3s infinite; }
+
+/* Main : About */
+#about { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 150px 15px; }
+#about::before {
+    content: "About Me"; font-family: 'PoetsenOne', sans-serif; font-size: 120px; position: absolute; top: 35px; left: 50%; transform: translateX(-50%) rotate(-12deg);
+    -webkit-text-stroke:5px #ebebeb; -webkit-text-fill-color:transparent; z-index: -1;
+}
+#about .img_box { position: relative; width:300px; height:380px; border-radius: 50%; background:url('../img/my_picture.png') no-repeat center / cover;}
+#about .img_box img { position: absolute; top:0; right:5px; width: 70px; opacity: 0; }
+#about .img_box.on img { animation: twinkle_ani 1s 0.3s infinite alternate; }
+#about .text_box { max-width: calc(100% - 300px); padding-left: 60px; }
+#about .text_box h2 { font-size: 34px; margin-bottom: 30px; }
+#about .text_box h2 span { position: relative; }
+#about .text_box h2 span::before { content:""; position: absolute; bottom: 0; left: 0; z-index: -1; background:linear-gradient(to top, #ffeb60 50%, transparent 50%); width: 0; height: 34px; transition: all 0.6s; }
+#about .text_box.on h2 span::before { width: 100%; }
+#about .text_box p { font-size: 16px; line-height: 1.6; margin-top: 10px; }
+
+/* Main : Portfolio */
+#portfolio { padding: 100px 15px; }
+#portfolio h2 { font-size: 54px; text-align: center; letter-spacing: -3px; margin-bottom: 50px; }
+#portfolio h2 span { position: relative; top: 5px; display: inline-block; animation: bounce_ani .3s ease infinite alternate; }
+#portfolio h2 span:nth-child(2) { animation-delay: .1s; }
+#portfolio h2 span:nth-child(3) { animation-delay: .2s; }
+#portfolio h2 span:nth-child(4) { animation-delay: .3s; }
+#portfolio h2 span:nth-child(5) { animation-delay: .4s; }
+#portfolio h2 span:nth-child(6) { animation-delay: .5s; }
+#portfolio h2 span:nth-child(7) { animation-delay: .6s; }
+#portfolio h2 span:nth-child(8) { animation-delay: .7s; }
+#portfolio h2 span:nth-child(9) { animation-delay: .8s; }
+#portfolio .task_list { display: flex; flex-wrap: wrap; gap:30px 2.5%; }
+#portfolio .task_list li { width: 31.66666666666667%; }
+#portfolio .task_list li a { display: block; }
+#portfolio .task_list li a .list_img { position: relative; padding-top:75%; background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 15px; overflow: hidden; }
+#portfolio .task_list li a .list_img::after { content: "VIEW MORE"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,calc(-50% - 10px)); color: #fff; opacity: 0; transition: all 0.3s; }
+#portfolio .task_list li a:hover .list_img::after,
+#portfolio .task_list li a:focus .list_img::after { opacity: 1; transform: translate(-50%,-50%); }
+#portfolio .task_list li a .list_tit { font-size: 18px; line-height: 50px; margin-top: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+
+
+
+
+/* Main : 애니메이션 */
+@keyframes stroke_ani {
+    100%, 25% {
+        stroke-dasharray: 0 250;
+        stroke-opacity: 1
+    }
+    50%, 75% {
+        stroke-dasharray: 250 0;
+        stroke-opacity: .75
+    }
+    55%, 70% {
+        stroke-dasharray: 250 0;
+        stroke-opacity: 0
+    }
+}
+
+@keyframes fill_ani {
+    100%, 25%, 35%, 90% {
+        fill-opacity: 0
+    }
+    50%, 70% {
+        fill-opacity: 1
+    }
+}
+
+@keyframes click_ani {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes twinkle_ani {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(15deg) scale(1);
+    }
+}
+
+@keyframes bounce_ani {
+    100% {
+        top: -5px;
+    }
+}
+
+
+/* Footer */
+#ft { background-color: #ddd; }
