@@ -4,6 +4,7 @@ body { position: relative; font-family: 'GmarketSans', sans-serif; font-size: 14
 ol, ul, dl { margin: 0; padding: 0; }
 li { list-style: none; }
 a { text-decoration: none; color:#000; }
+button { background: none; border: none; cursor: pointer; font-family: 'GmarketSans', sans-serif; }
 
 .clear::after { content:""; clear:both; display:block; }
 .skip_tag { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: polygon(0 0, 0 0, 0 0); }
@@ -20,6 +21,9 @@ a { text-decoration: none; color:#000; }
 #hd nav ul li a { font-size: 16px; position: relative; }
 #hd nav ul li a::after { content:""; position:absolute; bottom:-2px; left: 0; width: 0px; height: 2px; background:#000; opacity: 0; transition:all 0.3s; }
 #hd nav ul li a:hover::after { width: 100%; opacity: 1; }
+
+/* Footer */
+#ft { background-color: #ddd; }
 
 
 /* Main : Home */
@@ -72,7 +76,8 @@ a { text-decoration: none; color:#000; }
 #portfolio .task_list li a:hover .list_img::after,
 #portfolio .task_list li a:focus .list_img::after { opacity: 1; transform: translate(-50%,-50%); }
 #portfolio .task_list li a .list_tit { font-size: 18px; line-height: 50px; margin-top: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
-
+#portfolio #load_btn { display: block; width: 120px; height: 42px; margin:50px auto 0; padding-top:4px; border: 1px solid #000; transition: all 0.3s; }
+#portfolio #load_btn:hover { background: #000; color:#fff; }
 
 
 
@@ -129,7 +134,3 @@ a { text-decoration: none; color:#000; }
         top: -5px;
     }
 }
-
-
-/* Footer */
-#ft { background-color: #ddd; }
