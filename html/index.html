@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
     <link rel="stylesheet" href="./fonts/fonts.css">
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     <script src="./js/main.js" defer></script>
 </head>
 
 <body>
+    <div id="loader">
+        <div></div>
+    </div>
+
     <header id="hd">
         <h1><a href="/" class="font_pso">i'msohyun</a></h1>
         <nav>
             <ul>
-                <li><a href="/">HOME</a></li>
+                <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT ME</a></li>
                 <li><a href="#portfolio">PORTFOLIO</a></li>
                 <li><a href="#contact">CONTACT</a></li>
@@ -48,29 +52,87 @@
         </section>
 
         <section id="about" class="container">
-            <div class="img_box">
-                <img src="./img/twinkle_ico.png" alt="" class="twinkle">
+            <div class="info_box">
+                <div class="img_box">
+                    <img src="./img/twinkle_ico.png" alt="" class="twinkle">
+                </div>
+                <div class="text_box" data-aos="zoom-in-left" data-aos-offset="200" data-aos-duration="800" data-aos-once="true">
+                    <h2>
+                        안녕하세요! <br />
+                        <span>연결하는</span> 웹 퍼블리셔 <br />
+                        김소현입니다.
+                    </h2>
+                    <P>
+                        저는 디자인을 실제 움직이는 화면으로 구현하고 사용자와의 상호작용을 <br />
+                        최적화하여 더 나은 경험을 제공하는 3년차 웹 퍼블리셔입니다.
+                    </P>
+                    <p>
+                        웹 사이트가 사용자에게 닿을 수 있도록 <b>'연결'</b>하는 것과 <br />
+                        디자이너와 개발자 사이를 <b>'연결'</b>하는 것이 저의 역할이라 생각하며, <br />
+                        웹 표준과 접근성을 준수한 반응형 디자인에 최적화된 구현을 통해 <br />
+                        항상 모든 사용자와 디바이스에 일관된 경험을 제공하기 위해 노력합니다.
+                    </p>
+                </div>
             </div>
-            <div class="text_box">
-                <h2>
-                    안녕하세요! <br />
-                    <span>연결하는</span> 웹 퍼블리셔 <br />
-                    김소현입니다.
-                </h2>
-                <P>
-                    저는 디자인을 실제 움직이는 화면으로 구현하고 사용자와의 상호작용을 <br />
-                    최적화하여 더 나은 경험을 제공하는 3년차 웹 퍼블리셔입니다.
-                </P>
-                <p>
-                    웹 사이트가 사용자에게 닿을 수 있도록 <b>'연결'</b>하는 것과 <br />
-                    디자이너와 개발자 사이를 <b>'연결'</b>하는 것이 저의 역할이라 생각하며, <br />
-                    웹 표준과 접근성을 준수한 반응형 디자인에 최적화된 구현을 통해 <br />
-                    항상 모든 사용자와 디바이스에 일관된 경험을 제공하기 위해 노력합니다.
-                </p>
-                <p>
-                    또한, 팀원 간 원활한 협업을 위해 끊임없는 소통을 중시하며, <br />
-                    함께 더 큰 성과를 이루어내는 것을 목표로 합니다.
-                </p>
+            <div class="skill_box" data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000" data-aos-once="true">
+                <h3>SKILL</h3>
+                <ul>
+                    <li>
+                        <img src="./img/skill_ico01.png" alt="HTML5">
+                        <p>
+                            웹 접근성 인증마크 취득 경험을 바탕으로 시맨틱 태그를 사용해
+                            HTML 구조를 구성하며, SEO 최적화와 웹 접근성, 유지보수를 고려한 웹 사이트를 제작합니다.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="./img/skill_ico02.png" alt="CSS3">
+                        <p>
+                            CSS 애니메이션으로 사용자 인터페이스에 동적인 요소를 추가하며,
+                            미디어 쿼리를 통해 모든 디바이스에 최적화된 반응형 디자인을 구현할 수 있습니다.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="./img/skill_ico03.png" alt="jQuery, JavaScript">
+                        <p>
+                            jQuery와 JavaScript를 사용하여 다양한 동적 기능을 구현할 수 있으며,
+                            플러그인 사용 및 커스텀 경험이 있습니다.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="./img/skill_ico04.png" alt="gnuboard">
+                        <p>
+                            주로 그누보드를 사용한 웹 사이트 제작을 했으며,
+                            고객이 원하는 디자인에 맞춰 유연하게 작업할 수 있습니다.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="./img/skill_ico05.png" alt="Photoshop">
+                        <p>
+                            기본적인 툴 사용 및 편집이 가능합니다.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="./img/skill_ico06.png" alt="GitHub">
+                        <p>
+                            GitHub를 통한 프로젝트 관리가 가능합니다.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="exper_box" data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000" data-aos-once="true">
+                <div class="inner">
+                    <h3>EXPERIENCE</h3>
+                    <ul>
+                        <li>누리아이 <span>(2021.01 ~ 2024.01)</span></li>
+                    </ul>
+                </div>
+                <div class="inner">
+                    <h3>EDUCATION</h3>
+                    <ul>
+                        <li>SBS컴퓨터아트아카데미 웹 정규과정 <span>(2020.01 ~ 2020.05)</span></li>
+                        <li>인천재능대학교 컴퓨터정보과 <span>(2018.03 ~ 2020.02)</span></li>
+                    </ul>
+                </div>
             </div>
         </section>
 

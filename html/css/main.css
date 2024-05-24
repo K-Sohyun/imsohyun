@@ -1,5 +1,4 @@
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; padding: 0; margin: 0; }
-html { scroll-behavior: smooth; }
 body { position: relative; font-family: 'GmarketSans', sans-serif; font-size: 14px; line-height: 1.2; min-width:280px; overflow-x:hidden; }
 ol, ul, dl { margin: 0; padding: 0; }
 li { list-style: none; }
@@ -12,6 +11,12 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 .font_kky { font-family: "Kranky", sans-serif; }
 .container { max-width: 1230px; padding:0 15px; margin:0 auto; }
 
+/* loader */
+#loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 99999; }
+#loader > div { position: relative; width: 14px; height: 14px; top: 50%; left: 50%; transform: translate(-50%,-50%); border-radius:50%; background: #000; animation: loader_ani 1s ease-in-out infinite; }
+#loader > div::before,
+#loader > div::after { content: ""; position: absolute; background: #ffc800; top: 0px; left: 25px; width: 14px; height: 14px; border-radius: 50%; }
+#loader > div::before { left:-25px; }
 
 /* Header */
 #hd { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; align-items: center; height: 80px; padding: 0 40px; }
@@ -36,29 +41,39 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #home .fill { fill: #000; fill-opacity: 0; animation: fill_ani 8s infinite; animation-timing-function: cubic-bezier(.25, .46, .45, .94); }
 #home #draw-text { font-family: 'Kranky', sans-serif; font-size: 64px; }
 
-#home .click { position:absolute; bottom: 15px; left: 50%; transform:translateX(-50%); font-size: 14px; color:#000; }
-#home .click span { position:relative; display:block; width:26px; height: 38px; border: 2px solid #000; border-radius: 20px; margin: 0 auto 5px; }
-#home .click span::after { content:""; position:absolute; width:5px; height:5px;border-radius: 50%; background:#000; top:5px; left:8px; animation: click_ani 3s infinite; }
+#home .click { position:absolute; bottom: 15px; left: 50%; transform:translateX(-50%); font-size: 12px; color:#000; }
+#home .click span { position:relative; display:block; width:22px; height: 32px; border: 2px solid #000; border-radius: 20px; margin: 0 auto 5px; }
+#home .click span::after { content:""; position:absolute; width:4px; height:4px;border-radius: 50%; background:#000; top:5px; left:7px; animation: click_ani 3s infinite; }
 
 /* Main : About */
-#about { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 150px 15px; }
+#about { padding: 180px 15px 50px; position: relative; }
 #about::before {
-    content: "About Me"; font-family: 'PoetsenOne', sans-serif; font-size: 120px; position: absolute; top: 35px; left: 50%; transform: translateX(-50%) rotate(-12deg);
+    content: "About Me"; font-family: 'PoetsenOne', sans-serif; font-size: 120px; position: absolute; top: 60px; left: 50%; transform: translateX(-50%) rotate(-12deg);
     -webkit-text-stroke:5px #ebebeb; -webkit-text-fill-color:transparent; z-index: -1;
 }
-#about .img_box { position: relative; width:300px; height:380px; border-radius: 50%; background:url('../img/my_picture.png') no-repeat center / cover;}
-#about .img_box img { position: absolute; top:0; right:5px; width: 70px; opacity: 0; }
-#about .img_box.on img { animation: twinkle_ani 1s 0.3s infinite alternate; }
-#about .text_box { max-width: calc(100% - 300px); padding-left: 60px; }
-#about .text_box h2 { font-size: 34px; margin-bottom: 30px; }
-#about .text_box h2 span { position: relative; }
-#about .text_box h2 span::before { content:""; position: absolute; bottom: 0; left: 0; z-index: -1; background:linear-gradient(to top, #ffeb60 50%, transparent 50%); width: 0; height: 34px; transition: all 0.6s; }
-#about .text_box.on h2 span::before { width: 100%; }
-#about .text_box p { font-size: 16px; line-height: 1.6; margin-top: 10px; }
+#about .info_box { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 50px; padding-bottom: 50px; border-bottom: 1px solid #ebebeb; }
+#about .info_box .img_box { position: relative; width:300px; height:380px; border-radius: 50%; background:url('../img/my_picture.png') no-repeat center / cover;}
+#about .info_box .img_box img { position: absolute; top:0; right:5px; width: 70px; animation: twinkle_ani 1s 0.3s infinite alternate; }
+#about .info_box .text_box { max-width: calc(100% - 300px); padding-left: 60px; }
+#about .info_box .text_box h2 { font-size: 34px; margin-bottom: 30px; }
+#about .info_box .text_box h2 span { position: relative; }
+#about .info_box .text_box h2 span::before { content:""; position: absolute; bottom: 0; left: 0; z-index: -1; width: 100%; height: 34px; background:linear-gradient(to top, #ffeb60 50%, transparent 50%); }
+#about .info_box .text_box p { font-size: 16px; line-height: 1.6; margin-top: 15px; }
+#about .skill_box h3,
+#about .exper_box h3 { font-size: 20px; margin-bottom: 10px; background: url('../img/check_ico.png') no-repeat left top 2px / 16px; padding-left: 21px; }
+#about .skill_box ul { display: flex; flex-wrap: wrap; gap: 20px 15px; }
+#about .skill_box ul li { width: calc(50% - 7.5px); display: flex; align-items: center; }
+#about .skill_box ul li img { width: 48px; }
+#about .skill_box ul li p { width: calc(100% - 48px); padding-top: 5px; padding-left: 5px; font-size: 15px; line-height: 1.5; word-break: keep-all; }
+#about .exper_box { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
+#about .exper_box .inner { width: calc(50% - 15px); }
+#about .exper_box ul li { position: relative; padding-left: 10px; font-size: 15px; line-height: 1.5; margin-top: 4px; }
+#about .exper_box ul li::before { content: ""; width: 4px; height: 4px; background:#ffc800; border-radius: 50%; position: absolute; top: 8px; left: 0; }
+#about .exper_box ul li span { font-size: 13px; color:#666; }
 
 /* Main : Portfolio */
-#portfolio { padding: 100px 15px; }
-#portfolio h2 { font-size: 54px; text-align: center; letter-spacing: -3px; margin-bottom: 50px; }
+#portfolio { padding: 100px 15px; max-width: 1730px; }
+#portfolio h2 { font-size: 70px; text-align: center; letter-spacing: -3px; margin-bottom: 50px; }
 #portfolio h2 span { position: relative; top: 5px; display: inline-block; animation: bounce_ani .3s ease infinite alternate; }
 #portfolio h2 span:nth-child(2) { animation-delay: .1s; }
 #portfolio h2 span:nth-child(3) { animation-delay: .2s; }
@@ -68,20 +83,32 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #portfolio h2 span:nth-child(7) { animation-delay: .6s; }
 #portfolio h2 span:nth-child(8) { animation-delay: .7s; }
 #portfolio h2 span:nth-child(9) { animation-delay: .8s; }
-#portfolio .task_list { display: flex; flex-wrap: wrap; gap:30px 2.5%; }
-#portfolio .task_list li { width: 31.66666666666667%; }
+#portfolio .task_list { display: flex; flex-wrap: wrap; gap:30px 2%; }
+#portfolio .task_list li { width: 32%; }
 #portfolio .task_list li a { display: block; }
-#portfolio .task_list li a .list_img { position: relative; padding-top:75%; background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 15px; overflow: hidden; }
+#portfolio .task_list li a .list_img { position: relative; padding-top:65%; background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 15px; overflow: hidden; }
 #portfolio .task_list li a .list_img::after { content: "VIEW MORE"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,calc(-50% - 10px)); color: #fff; opacity: 0; transition: all 0.3s; }
 #portfolio .task_list li a:hover .list_img::after,
 #portfolio .task_list li a:focus .list_img::after { opacity: 1; transform: translate(-50%,-50%); }
-#portfolio .task_list li a .list_tit { font-size: 18px; line-height: 50px; margin-top: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
-#portfolio #load_btn { display: block; width: 120px; height: 42px; margin:50px auto 0; padding-top:4px; border: 1px solid #000; transition: all 0.3s; }
+#portfolio .task_list li a .list_tit { font-size: 18px; line-height: 30px; margin-top: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+#portfolio #load_btn { display: block; width: 120px; height: 42px; margin:50px auto 0; padding-top:4px; border: 1px solid #000; border-radius: 22px; transition: all 0.3s; }
 #portfolio #load_btn:hover { background: #000; color:#fff; }
 
 
 
-/* Main : 애니메이션 */
+/* 애니메이션 */
+@keyframes loader_ani {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
 @keyframes stroke_ani {
     100%, 25% {
         stroke-dasharray: 0 250;
