@@ -3,7 +3,7 @@ $(function () {
     //로딩화면
     $('#loader').delay(1000).fadeOut(1000);
 
-    //스크롤
+    //스크롤 부드럽게
     $('a').click(function () {
         $('html, body').animate({ 
             scrollTop: $($.attr(this, 'href')).offset().top
@@ -11,7 +11,7 @@ $(function () {
         return false;
     });
 
-    //헤더변경
+    //헤더 스타일변경
     var lastT = 0;
     $(window).scroll(function () {
         var nowT = $(this).scrollTop();
@@ -28,7 +28,7 @@ $(function () {
         lastT = nowT;
     });
 
-    //포트폴리오
+    //포트폴리오 리스트
     $('.task_list > li').hide();
     $('.task_list > li').slice(0, 6).css("display", "block");
     $('#load_btn').click(function (e) {
