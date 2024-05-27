@@ -70,7 +70,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #about .skill_box ul li { width: calc(50% - 7.5px); display: flex; align-items: center; }
 #about .skill_box ul li img { width: 48px; }
 #about .skill_box ul li p { width: calc(100% - 48px); padding-top: 5px; padding-left: 5px; font-size: 15px; line-height: 1.5; word-break: keep-all; }
-#about .exper_box { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
+#about .exper_box { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 50px; }
 #about .exper_box .inner { width: calc(50% - 15px); }
 #about .exper_box ul li { position: relative; padding-left: 10px; font-size: 15px; line-height: 1.5; margin-top: 4px; }
 #about .exper_box ul li::before { content: ""; width: 4px; height: 4px; background:#ffc800; border-radius: 50%; position: absolute; top: 8px; left: 0; }
@@ -100,12 +100,10 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #portfolio #load_btn:hover { background: #000; color:#fff; }
 
 /* CONTACT */
-#contact { padding: 50px 0 100px; }
-#contact .rolling_txt { overflow: hidden; }
-#contact .rolling_txt h2 { display: flex; gap:0 70px; font-size: 70px; animation: rolling_ani 20s linear infinite alternate; }
-#contact .rolling_txt h2:hover { animation-play-state: paused; }
-#contact .rolling_txt h2 span:nth-child(odd) { -webkit-text-stroke: 3px #000; -webkit-text-fill-color: transparent; }
-#contact .text_box{ text-align: center; margin-top: 40px; }
+#contact { padding: 50px 0 100px; overflow: hidden; }
+#contact .flow_box { width: 150%; padding-top: 6%; background-image: url('../img/contact_back.png'); background-repeat: repeat-x; background-position: 0% center; background-size: 50% auto; animation: flow_ani 15s linear infinite;}
+#contact .flow_box:hover { animation-play-state: paused; }
+#contact .text_box{ text-align: center; margin-top: 70px; }
 #contact .text_box p { font-size: 18px; line-height: 1.8; }
 #contact .text_box ul { margin-top: 30px; }
 #contact .text_box ul li { font-size: 16px; margin-top: 10px; }
@@ -177,11 +175,8 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     }
 }
 
-@keyframes rolling_ani {
-    0% {
-        transform: translateX(0%);
-    }
+@keyframes flow_ani {
     100% {
-        transform: translateX(-100%);
+        background-position: -100% center;
     }
 }
