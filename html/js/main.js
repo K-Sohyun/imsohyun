@@ -12,11 +12,11 @@ $(function () {
     });
 
     //헤더 스타일변경
-    var lastT = 0;
+    let setT = 0;
     $(window).scroll(function () {
-        var nowT = $(this).scrollTop();
+        let nowT = $(this).scrollTop();
 
-        if (nowT > lastT) {
+        if (nowT > setT) {
             $('#hd').stop().slideUp();
         } else if (nowT == 0) {
             $('#hd').removeClass('on');
@@ -25,7 +25,7 @@ $(function () {
             $('#hd').stop().slideDown();
             $('#hd').addClass('on');
         }
-        lastT = nowT;
+        setT = nowT;
     });
 
     //포트폴리오 리스트
