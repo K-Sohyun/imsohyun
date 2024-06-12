@@ -20,22 +20,22 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #loader > div::before { left:-25px; }
 
 /* Header */
-#hd { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; align-items: center; height: 80px; padding: 0 40px; }
+#hd { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; align-items: center; }
 #hd.on { background:rgba(255,255,255,0.95); box-shadow: 0px 0px 10px rgba(0,0,0,0.15); }
-#hd h1 {font-size: 2.8rem; margin-right: auto; }
+#hd h1 {font-size: 2.6rem; margin-right: auto; }
 #hd nav ul { display: flex; gap: 0 3rem; }
-#hd nav ul li a { font-size: 1.7rem; position: relative; }
+#hd nav ul li a { font-size: 1.6rem; position: relative; }
 #hd nav ul li a::after { content:""; position:absolute; bottom:-2px; left: 0; width: 0px; height: 2px; background:#000; opacity: 0; transition:all 0.3s; }
 #hd nav ul li a:hover::after { width: 100%; opacity: 1; }
 
 /* Footer */
-#ft { padding: 3rem 15px; background: #000; text-align: center; color: #fff; }
+#ft { padding: 3rem 15px; background: #000; text-align: center; }
+#ft * { color: #fff; }
 #ft strong { display: block; font-size: 2.6rem; margin-bottom: 2rem; }
 #ft ul li { display: inline-block; font-size: 1.4rem; margin-right: 2rem; }
 #ft ul li:last-child { margin-right: 0; }
 #ft ul li b { margin-right: 1rem; }
 #ft p { font-size: 1.3rem; color: #777; margin-top: 3rem; }
-
 
 /* Main : Home */
 #home { position:relative; height: 100vh; overflow: hidden; }
@@ -101,18 +101,17 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #portfolio #load_btn:hover { background: #000; color:#fff; }
 
 /* CONTACT */
-#contact { padding: 5rem 0 10rem; overflow: hidden; }
+#contact { padding: 5rem 0 15rem; overflow: hidden; }
 #contact .flow_box { width: 130%; padding-top: 5%; background-image: url('../img/contact_back.png'); background-repeat: repeat-x; background-position: 0% center; background-size: 50% auto; animation: flow_ani 15s linear infinite;}
 #contact .flow_box:hover { animation-play-state: paused; }
 #contact .text_box { text-align: center; margin-top: 8rem; }
-#contact .text_box p { font-size: 2rem; line-height: 1.8; }
+#contact .text_box p { font-size: 2rem; line-height: 1.8; word-break: keep-all; }
 #contact .text_box ul { margin-top: 3rem; }
 #contact .text_box ul li { font-size: 1.8rem; margin-top: 1.2rem; }
 #contact .text_box ul li b {margin-right: 1rem;}
 #contact .text_box ul li a { display: inline-block; }
 #contact .text_box ul li a::after { content: ""; display: block; border-bottom: 1px solid #000; transform: scaleX(0); transition: transform 0.3s ease-in-out; }
 #contact .text_box ul li a:hover::after { transform: scaleX(1); }
-
 
 /* 애니메이션 */
 @keyframes loader_ani {
@@ -187,17 +186,15 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 /* 반응형 */
 @media screen and (max-width:1024px) {
     /* Header */
-    #hd { height: 70px; padding: 0 15px; }
     #hd h1 { font-size: 2.2rem; }
     #hd nav ul { gap:0 2rem; }
-    #hd nav ul li a { font-size: 1.5rem; }
+    #hd nav ul li a { font-size: 1.4rem; }
 
     /* Footer */
     #ft { padding: 2.5rem 15px; }
     #ft strong { font-size: 2.2rem; }
     #ft ul li { font-size: 1.3rem; }
     #ft p { margin-top: 1.5rem; }
-
 
     /* Main : Home */
     #home #draw-text { font-size: 6rem; }
@@ -227,7 +224,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #portfolio #load_btn { margin-top: 5rem; }
 
     /* CONTACT */
-    #contact { padding: 4rem 0 8rem; }
+    #contact { padding: 4rem 0 12rem; }
     #contact .text_box {  margin-top: 6rem; }
     #contact .text_box p { font-size: 1.8rem; }
     #contact .text_box ul li { font-size: 1.6rem; }
@@ -235,18 +232,23 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 
 @media screen and (max-width:768px) {
     /* Header */
-    #hd { flex-wrap: wrap; height: auto; padding: 15px; }
-    #hd h1 { margin: 0 auto 10px; }
-    #hd nav { width: 100%; }
+    #hd { display: block; }
+    #hd h1 { font-size: 2rem; text-align: center; margin-bottom: 8px; }
     #hd nav ul { justify-content: center; }
-    #hd nav ul li a { font-size: 1.4rem; }
+    #hd nav ul li a { font-size: 1.3rem; }
+    #hd nav ul li a::after { bottom: 0; height: 1px; }
+
+    /* Main : Home */
+    #home .click { font-size: 1rem; }
+    #home .click span { width: 18px; height: 26px; }
+    #home .click span::after { width: 2px; height: 3px; left: 6px; }
 
     /* Main : About */
     #about { padding: 12rem 15px 3rem; }
     #about::before { font-size: 9rem; }
     #about .info_box .text_box { max-width: none; padding-left: 0; margin-top: 3rem; text-align: center; }
     #about .info_box .text_box h2 { font-size: 2.8rem; }
-    #about .info_box .text_box p { font-size: 1.5rem; margin-top: 1rem; }
+    #about .info_box .text_box p { font-size: 1.4rem; margin-top: 1rem; }
     #about .skill_box h3,
     #about .exper_box h3 { font-size: 1.8rem; background-size: 13px; padding-left: 1.8rem; }
     #about .skill_box ul { gap: 1.5rem 0; }
@@ -264,11 +266,13 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #portfolio h2 { font-size: 5rem; }
     #portfolio .task_list li a .list_img::after { font-size: 1.4rem; }
     #portfolio .task_list li a .list_tit { font-size: 1.6rem; }
-    #portfolio #load_btn { font-size: 1.4rem; width: 11rem; height: 4rem; margin-top: 4rem; }
+    #portfolio #load_btn { font-size: 1.4rem; width: 11rem; height: 4rem; margin-top: 4rem; padding-top:0.2rem; }
 
     /* CONTACT */
-    #contact { padding: 3rem 0 6rem; }
-    #contact .text_box p { font-size: 1.6rem; }
+    #contact { padding: 3rem 0 9rem; }
+    #contact .flow_box { width: 200%; padding-top: 8%; }
+    #contact .text_box { margin-top: 5rem; }
+    #contact .text_box p { font-size: 1.5rem; }
     #contact .text_box ul { margin-top: 2rem; }
     #contact .text_box ul li { font-size: 1.4rem; }
 }
@@ -283,7 +287,11 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #portfolio h2 { font-size: 4rem; margin-bottom: 3rem; }
     #portfolio .task_list { gap:2rem 0; }
     #portfolio .task_list li { width: 100%; }
+}
 
-    /* CONTACT */
-    #contact .text_box { margin-top: 5rem; }
+@media screen and (max-width:390px) {
+    /* Header */
+    #hd nav ul { gap:0 1rem; }
+    #hd nav ul li:first-child { display:none; }
+    #hd nav ul li a { font-size: 1.2rem; letter-spacing: -0.4px; }
 }
