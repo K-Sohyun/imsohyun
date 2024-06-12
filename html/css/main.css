@@ -215,6 +215,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #about .skill_box ul { gap: 2rem 1.5rem; }
     #about .skill_box ul li p { font-size: 1.5rem; }
     #about .exper_box { margin-top: 4rem; }
+    #about .exper_box ul li { font-size: 1.5rem; }
 
     /* Main : Portfolio */
     #portfolio { padding: 10rem 0; }
