@@ -52,7 +52,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #home .click span::after { content:""; position:absolute; width:4px; height:6px;border-radius: 50%; background:#000; top:2px; left:7px; animation: scroll_ani 2s infinite; }
 
 /* Main : About */
-#about { padding: 17rem 15px 5rem; position: relative; }
+#about { padding: 17rem 15px 15rem; position: relative; }
 #about::before {
     content: "About Me"; font-family: 'PoetsenOne', sans-serif; font-size: 14rem; position: absolute; top: 50px; left: 50%; transform: translateX(-50%) rotate(-12deg);
     -webkit-text-stroke:5px #ebebeb; -webkit-text-fill-color:transparent; z-index: -1; white-space: nowrap;
@@ -78,7 +78,8 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #about .exper_box ul li span { font-size: 1.3rem; color:#666; }
 
 /* Main : Portfolio */
-#portfolio { padding: 10rem 15px; max-width: 1730px; }
+#portfolio { padding: 15rem 0; background:#f5f5f5; }
+#portfolio div.container { max-width: 1730px; }
 #portfolio h2 { font-size: 7rem; text-align: center; letter-spacing: -3px; text-shadow: 6px 5px 0px rgba(0,0,0,0.1); margin-bottom: 5rem; }
 #portfolio h2 span { position: relative; top: 5px; display: inline-block; animation: bounce_ani .3s ease infinite alternate; }
 #portfolio h2 span:nth-child(2) { animation-delay: .1s; }
@@ -101,7 +102,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
 #portfolio #load_btn:hover { background: #000; color:#fff; }
 
 /* CONTACT */
-#contact { padding: 5rem 0 15rem; overflow: hidden; }
+#contact { padding: 15rem 0; overflow: hidden; }
 #contact .flow_box { width: 130%; padding-top: 5%; background-image: url('../img/contact_back.png'); background-repeat: repeat-x; background-position: 0% center; background-size: 50% auto; animation: flow_ani 15s linear infinite;}
 #contact .flow_box:hover { animation-play-state: paused; }
 #contact .text_box { text-align: center; margin-top: 8rem; }
@@ -200,7 +201,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #home #draw-text { font-size: 6rem; }
 
     /* Main : About */
-    #about { padding: 14rem 15px 4rem; }
+    #about { padding: 14rem 15px 10rem; }
     #about::before { font-size: 13rem; }
     #about .info_box { margin-bottom: 4rem; padding-bottom: 4rem; }
     #about .info_box .img_box { width:280px; height:350px; }
@@ -216,7 +217,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #about .exper_box { margin-top: 4rem; }
 
     /* Main : Portfolio */
-    #portfolio { padding: 8rem 15px; }
+    #portfolio { padding: 10rem 0; }
     #portfolio h2 { font-size: 6rem; margin-bottom: 4rem; }
     #portfolio .task_list { gap:2.5rem 2rem; }
     #portfolio .task_list li { width: calc(50% - 1rem); }
@@ -224,7 +225,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #portfolio #load_btn { margin-top: 5rem; }
 
     /* CONTACT */
-    #contact { padding: 4rem 0 12rem; }
+    #contact { padding: 10rem 0; }
     #contact .text_box {  margin-top: 6rem; }
     #contact .text_box p { font-size: 1.8rem; }
     #contact .text_box ul li { font-size: 1.6rem; }
@@ -244,7 +245,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #home .click span::after { width: 2px; height: 3px; left: 6px; }
 
     /* Main : About */
-    #about { padding: 12rem 15px 3rem; }
+    #about { padding: 12rem 15px 8rem; }
     #about::before { font-size: 9rem; }
     #about .info_box .text_box { max-width: none; padding-left: 0; margin-top: 3rem; text-align: center; }
     #about .info_box .text_box h2 { font-size: 2.8rem; }
@@ -262,14 +263,14 @@ button { background: none; border: none; cursor: pointer; font-family: 'GmarketS
     #about .exper_box ul li span { font-size: 1.2rem; display: block; }
 
     /* Main : Portfolio */
-    #portfolio { padding: 6rem 15px; }
+    #portfolio { padding: 8rem 0; }
     #portfolio h2 { font-size: 5rem; }
     #portfolio .task_list li a .list_img::after { font-size: 1.4rem; }
     #portfolio .task_list li a .list_tit { font-size: 1.6rem; }
     #portfolio #load_btn { font-size: 1.4rem; width: 11rem; height: 4rem; margin-top: 4rem; padding-top:0.2rem; }
 
     /* CONTACT */
-    #contact { padding: 3rem 0 9rem; }
+    #contact { padding: 8rem 0; }
     #contact .flow_box { width: 200%; padding-top: 8%; }
     #contact .text_box { margin-top: 5rem; }
     #contact .text_box p { font-size: 1.5rem; }
