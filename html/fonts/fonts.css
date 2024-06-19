@@ -1,19 +1,19 @@
 /*어그로체*/
 @font-face {
     font-family: 'SBAggro';
-    src: url('/fonts/OTSBAggroL.woff') format('woff');
+    src: url('./OTSBAggroL.woff') format('woff');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'SBAggro';
-    src: url('/fonts/OTSBAggroM.woff') format('woff');
+    src: url('./OTSBAggroM.woff') format('woff');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'SBAggro';
-    src: url('/fonts/OTSBAggroB.woff') format('woff');
+    src: url('./OTSBAggroB.woff') format('woff');
     font-weight: 700;
 }
 

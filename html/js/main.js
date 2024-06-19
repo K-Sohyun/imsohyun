@@ -50,6 +50,20 @@ $(function () {
         setT = nowT;
     });
 
+    //탑버튼
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 800) {
+            $('#top_btn').fadeIn();
+        } else {
+            $('#top_btn').fadeOut();
+        }
+    });
+
+    $('#top_btn').click(function(){
+		$('body, html').animate({ scrollTop : 0 }, 500);
+	});
+
+
     //포트폴리오 더보기
     $('.task_list > li').hide();
     $('.task_list > li').slice(0, 6).css("display", "block");
