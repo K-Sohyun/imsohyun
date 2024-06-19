@@ -1,3 +1,23 @@
+/*어그로체*/
+@font-face {
+    font-family: 'SBAggro';
+    src: url('/fonts/OTSBAggroL.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'SBAggro';
+    src: url('/fonts/OTSBAggroM.woff') format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'SBAggro';
+    src: url('/fonts/OTSBAggroB.woff') format('woff');
+    font-weight: 700;
+}
+
+
 /*지마켓 산스*/
 @font-face {
     font-family: 'GmarketSans';
