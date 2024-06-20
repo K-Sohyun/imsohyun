@@ -89,7 +89,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'SBAggro'
 #about .exper_box ul li span { font-size: 1.3rem; color:#666; }
 
 /* Main : Portfolio */
-#portfolio { padding: 15rem 0; background:#f5f5f5; }
+#portfolio { padding: 15rem 0; background:#f7f7f7; }
 #portfolio div.container { max-width: 1730px; }
 #portfolio h2 { font-size: 7rem; text-align: center; letter-spacing: -3px; text-shadow: 6px 5px 0px rgba(0,0,0,0.1); margin-bottom: 5rem; }
 #portfolio h2 span { position: relative; top: 5px; display: inline-block; animation: bounce_ani .3s ease infinite alternate; }
