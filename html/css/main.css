@@ -41,7 +41,7 @@ button { background: none; border: none; cursor: pointer; font-family: 'SBAggro'
 /* Top Button */
 #top_btn { display: none; position: fixed; z-index:999; bottom: 50px; right: 40px; width: 70px; height: 66px; border-radius: 50%; border: 1px solid #000; background:#fff; cursor: pointer; }
 #top_btn .eyes_box { position:absolute; top:-10px; left:50%; transform: translateX(-50%); display: flex; }
-#top_btn .eyes_box .eye { position:relative; width:24px; height:30px; border-radius:50%; background: #fff; border:1px solid #000; }
+#top_btn .eyes_box .eye { position:relative; width:24px; height:30px; border-radius:50%; background: #fff; border:1px solid #000; overflow: hidden; }
 #top_btn .eyes_box .eye span { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); width:12px; height:14px; border-radius:50%; background:#000; animation: topBtn_ani 1s infinite alternate; }
 #top_btn:hover .eyes_box .eye span { animation-play-state: paused; }
 #top_btn .eyes_box .eye span::after { content:""; position:absolute; top:3px; left: 2px; width:2px; height:2px; border-radius:50%; background:#fff; }
